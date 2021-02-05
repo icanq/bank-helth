@@ -11,6 +11,7 @@ function App() {
   const [open, setOpen] = useState(false);
   const ref = useRef();
   useClickOutside(ref, () => setOpen(false));
+  
   return (
     <Router>
       <ThemeProvider theme={theme}>
