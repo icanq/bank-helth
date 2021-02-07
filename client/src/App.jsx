@@ -1,4 +1,3 @@
-import { Container } from './styled';
 import { ThemeProvider } from 'styled-components';
 import { theme } from './theme';
 import { Menu, Burger } from './components';
@@ -18,9 +17,6 @@ function App() {
           <Burger open={open} setOpen={setOpen} />
           <Menu open={open} setOpen={setOpen} />
         </div>
-        <Container>
-          <h1>hi</h1>
-        </Container>
       </ThemeProvider>
       <Switch>
         <Route path='/kinerja' component={Kinerja} />
