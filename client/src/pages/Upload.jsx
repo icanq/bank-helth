@@ -1,8 +1,10 @@
 import React, { useCallback } from 'react';
 import { useDropzone } from 'react-dropzone';
 import { StyledDropzone, StyledButton } from '../styled';
+import { useHistory } from 'react-router-dom'
 
 function MyDropzone() {
+  const history = useHistory()
   const onDrop = useCallback((acceptedFiles) => {
     console.log(acceptedFiles);
   }, []);
@@ -49,7 +51,10 @@ function MyDropzone() {
     };
     fetch('http://localhost:3001/upload', requestOptions)
       .then((response) => response.text())
-      .then((result) => console.log(result))
+      .then((result) => {
+        console.log(result)
+        history.push('/kinerja')
+      })
       .catch((error) => console.log('error', error));
   };
   return (

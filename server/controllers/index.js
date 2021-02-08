@@ -44,15 +44,15 @@ class Controller {
               pendapatan: row[12],
               danaPihakKetiga: row[13],
               NPL:
-                ((row[4] + row[5] + row[6]) /
+                (((row[4] + row[5] + row[6]) /
                   (row[2] + row[3] + row[4] + row[5] + row[6])) *
-                100,
-              ROE: (row[7] / row[8]) * 100,
-              ROA: (row[7] / row[9]) * 100,
-              CAR: (row[8] / row[10]) * 100,
-              BOPO: (row[11] / row[12]) * 100,
+                100).toFixed(2),
+              ROE: ((row[7] / row[8]) * 100).toFixed(2),
+              ROA: ((row[7] / row[9]) * 100).toFixed(2),
+              CAR: ((row[8] / row[10]) * 100).toFixed(2),
+              BOPO: ((row[11] / row[12]) * 100).toFixed(2),
               LDR:
-                ((row[2] + row[3] + row[4] + row[5] + row[6]) / row[13]) * 100,
+                (((row[2] + row[3] + row[4] + row[5] + row[6]) / row[13]) * 100).toFixed(2),
             };
             data.push(datum);
           });
