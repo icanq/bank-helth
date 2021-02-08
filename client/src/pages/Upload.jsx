@@ -36,14 +36,13 @@ function MyDropzone() {
       </ul>
     </li>
   ));
-  const handleUpload = (e) => {
-    var formdata = new FormData();
+  const handleUpload = () => {
+    const formdata = new FormData();
     formdata.append(
       'file',
       acceptedFiles[0]
     );
-
-    var requestOptions = {
+    const requestOptions = {
       method: 'POST',
       body: formdata,
       redirect: 'follow',
