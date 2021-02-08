@@ -1,10 +1,21 @@
-const express = require('express')
-const router = require('./routes')
-const app = express()
+const express = require('express');
+const router = require('./routes');
+const cors = require('cors')
+const db = require('./models');
+const app = express();
 
-app.use(express.json())
-app.use(express.urlencoded({ extended: true }))
+global.__basedir = __dirname;
 
-app.use('/', router)
+app.use(cors())
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-module.exports = app
+app.use('/', router);
+
+// db.sequelize.sync()
+
+// db.sequelize.sync({ force: true }).then(() => {
+//   console.log("Drop and re-sync db.");
+// });
+
+module.exports = app;

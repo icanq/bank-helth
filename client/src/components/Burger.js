@@ -8,9 +8,9 @@ const Burger = ({ open, setOpen, ...props }) => {
   
   return (
     <StyledBurger aria-label="Toggle menu" aria-expanded={isExpanded} open={open} onClick={() => setOpen(!open)} {...props}>
-      <span />
-      <span />
-      <span />
+      <span style={{ boxShadow: '1px 1px #888888'}} />
+      <span style={{ boxShadow: '1px 1px #888888'}} />
+      <span style={{ boxShadow: '1px 1px #888888'}} />
     </StyledBurger>
   )
 }

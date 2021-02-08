@@ -16,7 +16,7 @@ const StyledMenu = styled.nav`
       width: 100%;
     }
   a {
-    font-size: 2rem;
+    font-size: 1rem;
     text-transform: uppercase;
     padding: 2rem 0;
     font-weight: bold;

@@ -1,51 +1,72 @@
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('Properties', {
+    await queryInterface.createTable('BankData', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      SandiBankId: {
+      periode: {
         type: Sequelize.INTEGER
       },
-      KreditKol1: {
+      sandiBank: {
         type: Sequelize.INTEGER
       },
-      KreditKol2: {
+      kreditKol1: {
         type: Sequelize.INTEGER
       },
-      KreditKol3: {
+      kreditKol2: {
         type: Sequelize.INTEGER
       },
-      KreditKol4: {
+      kreditKol3: {
         type: Sequelize.INTEGER
       },
-      KreditKol5: {
+      kreditKkol4: {
         type: Sequelize.INTEGER
       },
-      Laba: {
+      kreditKol5: {
         type: Sequelize.INTEGER
       },
-      Modal: {
+      laba: {
         type: Sequelize.INTEGER
       },
-      TotalAset: {
+      modal: {
+        type: Sequelize.INTEGER
+      },
+      totalAset: {
         type: Sequelize.INTEGER
       },
       ATMR: {
         type: Sequelize.INTEGER
       },
-      BebanOperasional: {
+      bebanOperasional: {
         type: Sequelize.INTEGER
       },
-      Pendapatan: {
+      pendapatan: {
         type: Sequelize.INTEGER
       },
-      DanaPihakKetiga: {
+      danaPihakKetiga: {
         type: Sequelize.INTEGER
+      },
+      NPL: {
+        type: Sequelize.FLOAT
+      },
+      ROE: {
+        type: Sequelize.FLOAT
+      },
+      ROA: {
+        type: Sequelize.FLOAT
+      },
+      CAR: {
+        type: Sequelize.FLOAT
+      },
+      BOPO: {
+        type: Sequelize.FLOAT
+      },
+      LDR: {
+        type: Sequelize.FLOAT
       },
       createdAt: {
         allowNull: false,
@@ -58,6 +79,6 @@ module.exports = {
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('Properties');
+    await queryInterface.dropTable('BankData');
   }
 };

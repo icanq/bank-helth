@@ -1,18 +1,30 @@
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('FinancialData', {
+    await queryInterface.createTable('Indicators', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      SandiBank: {
-        type: Sequelize.INTEGER
+      Rk: {
+        type: Sequelize.STRING
       },
-      Periode: {
-        type: Sequelize.INTEGER
+      Pr: {
+        type: Sequelize.STRING
+      },
+      Re: {
+        type: Sequelize.STRING
+      },
+      Ef: {
+        type: Sequelize.STRING
+      },
+      Lk: {
+        type: Sequelize.STRING
+      },
+      Komposit: {
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,
@@ -25,6 +37,6 @@ module.exports = {
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('FinancialData');
+    await queryInterface.dropTable('Indicators');
   }
 };
