@@ -1,33 +1,30 @@
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('ProcessedData', {
+    await queryInterface.createTable('Indicators', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      periode: {
-        type: Sequelize.INTEGER
+      Rk: {
+        type: Sequelize.STRING
       },
-      NPL: {
-        type: Sequelize.FLOAT
+      Pr: {
+        type: Sequelize.STRING
       },
-      ROE: {
-        type: Sequelize.FLOAT
+      Re: {
+        type: Sequelize.STRING
       },
-      ROA: {
-        type: Sequelize.FLOAT
+      Ef: {
+        type: Sequelize.STRING
       },
-      CAR: {
-        type: Sequelize.FLOAT
+      Lk: {
+        type: Sequelize.STRING
       },
-      BOPO: {
-        type: Sequelize.FLOAT
-      },
-      LDR: {
-        type: Sequelize.FLOAT
+      Komposit: {
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,
@@ -40,6 +37,6 @@ module.exports = {
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('ProcessedData');
+    await queryInterface.dropTable('Indicators');
   }
 };

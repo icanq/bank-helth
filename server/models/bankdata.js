@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
     kreditKol1: DataTypes.INTEGER,
     kreditKol2: DataTypes.INTEGER,
     kreditKol3: DataTypes.INTEGER,
-    kreditKkol4: DataTypes.INTEGER,
+    kreditKol4: DataTypes.INTEGER,
     kreditKol5: DataTypes.INTEGER,
     laba: DataTypes.INTEGER,
     modal: DataTypes.INTEGER,
@@ -27,7 +27,13 @@ module.exports = (sequelize, DataTypes) => {
     ATMR: DataTypes.INTEGER,
     bebanOperasional: DataTypes.INTEGER,
     pendapatan: DataTypes.INTEGER,
-    danaPihakKetiga: DataTypes.INTEGER
+    danaPihakKetiga: DataTypes.INTEGER,
+    NPL: DataTypes.FLOAT,
+    ROE: DataTypes.FLOAT,
+    ROA: DataTypes.FLOAT,
+    CAR: DataTypes.FLOAT,
+    BOPO: DataTypes.FLOAT,
+    LDR: DataTypes.FLOAT
   }, {
     sequelize,
     modelName: 'BankData',

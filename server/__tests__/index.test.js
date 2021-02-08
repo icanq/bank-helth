@@ -1,0 +1,1 @@
+const { BankData, ProcessedData, Logs } = require('../models/index')

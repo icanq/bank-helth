@@ -11,7 +11,7 @@ const excelFilter = (req, file, cb) => {
   }
 };
 
-var storage = multer.diskStorage({
+const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, __basedir + "/uploads/");
   },
@@ -21,5 +21,5 @@ var storage = multer.diskStorage({
   },
 });
 
-var uploadFile = multer({ storage: storage, fileFilter: excelFilter });
+const uploadFile = multer({ storage: storage, fileFilter: excelFilter });
 module.exports = uploadFile;

@@ -12,16 +12,17 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       ProcessedData.belongsTo(models.BankData)
+      ProcessedData.hasOne(models.Indicator)
     }
   };
   ProcessedData.init({
     periode: DataTypes.INTEGER,
-    NPL: DataTypes.INTEGER,
-    ROE: DataTypes.INTEGER,
-    ROA: DataTypes.INTEGER,
-    CAR: DataTypes.INTEGER,
-    BOPO: DataTypes.INTEGER,
-    LDR: DataTypes.INTEGER
+    NPL: DataTypes.FLOAT,
+    ROE: DataTypes.FLOAT,
+    ROA: DataTypes.FLOAT,
+    CAR: DataTypes.FLOAT,
+    BOPO: DataTypes.FLOAT,
+    LDR: DataTypes.FLOAT,
   }, {
     sequelize,
     modelName: 'ProcessedData',

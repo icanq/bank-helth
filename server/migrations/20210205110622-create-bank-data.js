@@ -50,6 +50,24 @@ module.exports = {
       danaPihakKetiga: {
         type: Sequelize.INTEGER
       },
+      NPL: {
+        type: Sequelize.FLOAT
+      },
+      ROE: {
+        type: Sequelize.FLOAT
+      },
+      ROA: {
+        type: Sequelize.FLOAT
+      },
+      CAR: {
+        type: Sequelize.FLOAT
+      },
+      BOPO: {
+        type: Sequelize.FLOAT
+      },
+      LDR: {
+        type: Sequelize.FLOAT
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
