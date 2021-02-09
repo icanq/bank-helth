@@ -1,5 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
-
+import * as XLSX from 'xlsx'
+import * as FileSaver from 'file-saver'
+import { StyledButton } from '../styled/index'
 import styled from 'styled-components';
 
 const T = styled.table`
@@ -15,7 +17,6 @@ const Th = styled.th`
   padding: 0.5rem;
   text-align: left;
 `;
-
 const StyledSpinner = styled.svg`
   animation: rotate 2s linear infinite;
   margin: -25px 0 0 -25px;
@@ -49,6 +50,22 @@ const StyledSpinner = styled.svg`
   }
 `;
 
+const ExportCSV = ({csvData, fileName}) => {
+  const fileType = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8';
+  const fileExtension = '.xlsx';
+
+  const exportToCSV = (csvData, fileName) => {
+      const ws = XLSX.utils.json_to_sheet(csvData);
+      const wb = { Sheets: { 'data': ws }, SheetNames: ['data'] };
+      const excelBuffer = XLSX.write(wb, { bookType: 'xlsx', type: 'array' });
+      const data = new Blob([excelBuffer], {type: fileType});
+      FileSaver.saveAs(data, fileName + fileExtension);
+  }
+
+  return (
+      <StyledButton variant="warning" onClick={(e) => exportToCSV(csvData,fileName)}>Export</StyledButton>
+  )
+}
 function Kinerja() {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -117,6 +134,7 @@ function Kinerja() {
           return <option key={idx} value={el}>{el}</option>;
         })}
       </select>
+      <ExportCSV csvData={filter} fileName={'test ok'}/>
       <div>
         <T>
           <thead style={{ backgroundColor: 'papayawhip' }}>
